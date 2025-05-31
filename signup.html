@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        input:focus,
+        select:focus {
+            border-color: #80bdff;
+            outline: none;
+        }
+        input::placeholder,
+        select:focus::placeholder {
+            color: #999;
+        }
+        input:required:invalid {
+            border-color: red;
+        }
+        input:required:valid {
+            border-color: green;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            border-color: #007bff;
+        }
+        input[type="text"]:invalid,
+        input[type="email"]:invalid,
+        input[type="number"]:invalid,
+        select:invalid {
+            border-color: red;
+        }
+        input[type="text"]:valid,
+        input[type="email"]:valid,
+        input[type="number"]:valid,
+        select:valid {
+            border-color: green;
+        }
+        @media (max-width: 600px) {
+            form {
+                padding: 15px;
+            }
+            input[type="text"],
+            input[type="email"],
+            input[type="number"],
+            select {
+                width: calc(100% - 18px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        Details Fills
+    </h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="Name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Enter your name" required>
+        <br><br>
+        <label for="Email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Enter your email" required>
+        <br><br>
+        <label for="phone">Phone</label>
+        <input type="number" name="phone" id="phone" placeholder="Enter your phone number" required>
+        <br><br>
+        <label for="residence_type">resisdence type</label>
+        <select name="residence_type" id="residence_type" required>
+            <option value="apartment">Apartment</option>
+            <option value="house">House</option>
+            <option value="condo">Condo</option>
+            <option value="townhouse">Townhouse</option>
+            <option value="duplex">Duplex</option>
+            <option value="studio">Studio</option>
+            <option value="villa">Villa</option>
+            <option value="cottage">Cottage</option>
+            <option value="bungalow">Bungalow</option>
+            <option value="loft">Loft</option>
+            <option value="penthouse">Penthouse</option>
+            <option value="mobile_home">Mobile Home</option>
+            <option value="other">Other</option>
+        </select>
+        <br><br>
+        <label for="month_income">Monthly Income</label>
+        <input type="number" name="month_income" id="month_income" placeholder="Enter your monthly income" required>
+        <br><br>
+        <label for="previous_loans">Previous Loans</label>
+        <input type="number" name="previous_loan" id="previous_loan" placeholder="Enter your previous loans" required>
+        <br><br>
+        <label for="marital_status">Marital Status</label>
+        <select name="marital_status" id="marital_status" required>
+            <option value="single">Single</option>
+            <option value="married">Married</option>
+            <option value="divorced">Divorced</option>
+            <option value="widowed">Widowed</option>
+            <option value="separated">Separated</option>
+            <option value="cohabiting">Cohabiting</option>
+            <option value="engaged">Engaged</option>
+            <option value="domestic_partnership">Domestic Partnership</option>
+            <option value="other">Other</option>
+        </select>
+        <br><br>
+        <label for="dependency">Dependency Status</label>
+        <input type="number" name="dependency" id="dependency" placeholder="Enter your dependency status" required>
+        <br><br>
+        <label for="city">City</label>
+        <input type="text" name="city" id="city" placeholder="Enter your city" required>
+        <br><br>
+        <label for="state">State</label>
+        <input type="text" name="state" id="state" placeholder="Enter your state" required>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
